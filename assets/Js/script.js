@@ -55,3 +55,29 @@ function setTile(){
         currentPlayer=playerO;
     checkWinner();
 }
+function checkWinner(){
+    //Check hàng ngang
+    for(let row=0;row<3;row++){
+        if(board[row][0]==board[row][1] && board[row][1]==board[row][2] && board[row][0]!=" "){
+            for(let col=0;col<3;col++){
+                let tile=document.getElementById(row.toString()+"-"+col.toString());
+                tile.classList.add("winner");
+            }
+            gameOver=true;
+            alert("Người chơi "+board[row][0]+" thắng");
+            return
+        }
+    }
+    //Check hàng dọc
+    for(let col=0;col<3;col++){
+        if(board[0][col]==board[1][col] && board[1][col]==board[2][col] && board[0][col]!=" "){
+            for(let row=0;row<3;row++){
+                let tile=document.getElementById(row.toString()+"-"+col.toString());
+                tile.classList.add("winner");
+            }
+            gameOver=true;
+            alert("Người chơi "+board[0][col]+" thắng");
+            return
+        }
+    }
+}
