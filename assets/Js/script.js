@@ -80,4 +80,42 @@ function checkWinner(){
             return
         }
     }
+    //Check theo duong cheo ben trai
+    if(board[0][0]==board[1][1] && board[1][1]==board[2][2] && board[0][0]!=" "){
+        for(let i=0;i<3;i++){
+            let tile=document.getElementById(i.toString()+"-"+i.toString());
+            tile.classList.add("winner");
+        }
+        gameOver=true;
+        alert("Người chơi "+board[0][0]+" thắng");
+        return
+    }
+    //Check theo duong cheo ben phai
+    if(board[0][2]==board[1][1] && board[1][1]==board[2][0] && board[0][2]!=" "){
+        for(let i=0;i<3;i++){
+            let tile=document.getElementById(i.toString()+"-"+(2-i).toString());
+            tile.classList.add("winner");
+        }
+        gameOver=true;
+        alert("Người chơi "+board[0][2]+" thắng");
+        return
+    }
+    //Nếu không có người chơi nào thắng thì hiển thị thông báo hòa
+    let isBoardFull = true;
+    for (let row = 0; row < 3; row++) {
+        for (let col = 0; col < 3; col++) {
+            if (board[row][col] === " ") {
+                isBoardFull = false;
+                break;
+            }
+        }
+        if (!isBoardFull) {
+            break;
+        }
+    }
+
+    if (isBoardFull) {
+        gameOver = true;
+        alert("Hòa nhau");
+    }
 }
