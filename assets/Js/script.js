@@ -1,7 +1,7 @@
 var board;
 var playerO="O";
 var playerX="X";
-var currentPlayer=playerX;
+var currentPlayer=playerO;
 var gameOver=false;
 
 window.onload=function(){
@@ -25,8 +25,23 @@ function startGame() {
             if (c == 0 || c == 1) {
                 tile.classList.add("vertical-line");
             }
+            tile.addEventListener("click", setTile)
 
+            
+                
             document.getElementById("board").appendChild(tile);
+
         }
     }
+}
+function setTile(){
+    if(gameOver){
+        alert("Game Over");
+        return;
+    }
+    let coords=this.id.split("-");
+    let row=parseInt(coords[0]);
+    let col=parseInt(coords[1]);
+    board[row][col]=currentPlayer;
+    this.innerText=currentPlayer;
 }
