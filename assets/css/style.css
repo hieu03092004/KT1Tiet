@@ -1,45 +1,34 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
+body{
+    font-family:Arial, Helvetica, sans-serif ;
     text-align: center;
 }
-
-hr {
+hr{
     width: 500px;
-    height: 2px;
+    height: 3px;
     background-color: black;
 }
-
-
-#board {
+#board{
     width: 450px;
     height: 450px;
-    /* background-color: gray; */
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
 }
-
-.tile {
+.title{
     width: 147px;
     height: 147px;
-    
-    /* Text */
-    font-size: 150px;
+    font-size:150px ;
     display: flex;
-    justify-content: center; 
-    align-items: center;    
+    justify-content: center;
+    align-items: center;
 }
-
-.winner {
-    background-color: lightgray;
-    color: red;
-}
-
-
-.horizontal-line {
+.horizontal-line{
     border-bottom: 3px solid black;
 }
-
-.vertical-line {
+.vertical-line{
     border-right: 3px solid black;
+}
+.winner{
+    background-color: lightgray;
+    color: red;
 }
