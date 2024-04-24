@@ -42,6 +42,16 @@ function setTile(){
     let coords=this.id.split("-");
     let row=parseInt(coords[0]);
     let col=parseInt(coords[1]);
+    if(board[row][col]!=" "){
+        //Kiem tra de tranh viec click vao o da co gia tri
+        alert("Di chuyển không hợp lệ");
+        return;
+    }
     board[row][col]=currentPlayer;
     this.innerText=currentPlayer;
+    if(currentPlayer==playerO)
+        currentPlayer=playerX;
+    else
+        currentPlayer=playerO;
+    checkWinner();
 }
