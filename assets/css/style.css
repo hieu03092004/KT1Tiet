@@ -14,7 +14,7 @@ hr{
     display: flex;
     flex-wrap: wrap;
 }
-.title{
+.tile{
     width: 147px;
     height: 147px;
     font-size:150px ;
